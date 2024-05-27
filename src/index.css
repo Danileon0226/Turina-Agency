@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+:root {
+  /* Default light mode colors */
+  --text-color: #3e0a4a;
+  --subtitle-color: #a970f0;
+  --bg-color: #ffffff;
+  --link-color: #9b59b6;
+  --link-hover-color: #8e44ad;
+  --button-bg-color: #f9f9f9;
+  --button-hover-border-color: #9b59b6;
+}
+
+[data-theme="dark"] {
+  /* Dark mode colors */
+  --text-color: rgba(255, 255, 255, 0.87);
+  --subtitle-color: #b85de2;
+  --bg-color: #1e1e2f;
+  --link-color: #9b59b6;
+  --link-hover-color: #8e44ad;
+  --button-bg-color: #1a1a1a;
+  --button-hover-border-color: #9b59b6;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  width: 100%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center; /* Centra el texto dentro del contenedor */
+  min-height: 100vh; /* Opcional: asegura que el contenedor sea tan alto como el viewport */
+}
+
+body::before {
+  content: "";
+  position: fixed; /* o absolute dependiendo de tu layout */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0.1; /* Ajusta según la intensidad del efecto deseado */
+  pointer-events: none; /* Evita interferencias con la interacción del usuario */
+  z-index: -1; /* Asegura que la textura se sitúe detrás del contenido */
+}
+
+a {
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--button-hover-border-color);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
