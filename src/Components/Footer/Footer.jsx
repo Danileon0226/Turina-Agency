@@ -11,19 +11,22 @@ function Footer() {
   return (
     <Box
       sx={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
         padding: "20px",
         backgroundColor: "var(--bg-color)",
         color: "var(--text-color)",
         borderTop: "1px solid var(--bg-color)",
         marginBottom: "100px",
+        textAlign: "center", // Añadido para centrar el contenido
       }}
     >
-      <Grid container spacing={2} justifyContent="center">
+      <Grid
+        container
+        direction="row"
+        justifyContent="center" // Centramos los elementos horizontalmente
+        alignItems="center"
+        spacing={2} // Espacio entre los elementos del Grid
+      >
+        {/* Social Media Icons */}
         <Grid item>
           <IconButton
             sx={{
@@ -36,7 +39,8 @@ function Footer() {
             href="https://twitter.com"
             target="_blank"
           >
-            <TwitterIcon />
+            <TwitterIcon fontSize="large" />{" "}
+            {/* Ajustamos el tamaño de los iconos */}
           </IconButton>
         </Grid>
         <Grid item>
@@ -51,7 +55,7 @@ function Footer() {
             href="https://facebook.com"
             target="_blank"
           >
-            <FacebookIcon />
+            <FacebookIcon fontSize="large" />
           </IconButton>
         </Grid>
         <Grid item>
@@ -66,7 +70,7 @@ function Footer() {
             href="https://www.instagram.com"
             target="_blank"
           >
-            <InstagramIcon />
+            <InstagramIcon fontSize="large" />
           </IconButton>
         </Grid>
         <Grid item>
@@ -81,20 +85,21 @@ function Footer() {
             href="https://linkedin.com"
             target="_blank"
           >
-            <LinkedInIcon />
+            <LinkedInIcon fontSize="large" />
           </IconButton>
         </Grid>
-        <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
-          <Box sx={{ width: "50%", textAlign: "right" }}>
-            <img src={logo} alt="logo" style={{ width: "70px" }} />
-          </Box>
 
-          <Box sx={{ width: "50%", textAlign: "left" }}>
-            <Typography variant="body2">
-              &copy; {year} Turina. Todos los derechos reservados.
-            </Typography>
-          </Box>
-        </Box>
+        {/* Logo */}
+        <Grid item xs={12} md="auto">
+          <img src={logo} alt="logo" style={{ width: "70px" }} />
+        </Grid>
+
+        {/* Copyright */}
+        <Grid item xs={12} md="auto">
+          <Typography variant="body2">
+            &copy; {year} Turina. Todos los derechos reservados.
+          </Typography>
+        </Grid>
       </Grid>
     </Box>
   );

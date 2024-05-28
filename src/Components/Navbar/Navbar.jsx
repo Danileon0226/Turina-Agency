@@ -23,7 +23,7 @@ function Navbar() {
             </NavLink>
           </div>
           <div className="menu">
-            <NavLink to="/" className="frame">
+            <NavLink to="/Contact" className="frame">
               <i className="ri-stack-line"></i>
               <p className="li-mobile-p">Contacto</p>
             </NavLink>

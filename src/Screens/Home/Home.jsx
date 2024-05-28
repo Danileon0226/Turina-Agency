@@ -67,7 +67,12 @@ function Home() {
             textAlign: "left",
           }}
         >
-          <Typography variant="h3" sx={{ fontWeight: "bold" }} gutterBottom>
+          <Typography
+            variant="h3"
+            sx={{ fontWeight: "bold" }}
+            paragraph
+            gutterBottom
+          >
             IMPULSA TU CARRERA EN EL MODELAJE CON TURINA
           </Typography>
           <Typography variant="subtitle" paragraph>
@@ -94,10 +99,10 @@ function Home() {
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Paper elevation={3} sx={{ p: 4 }}>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
                 Descubre la Nueva Era del Modelaje
               </Typography>
-              <Typography>
+              <Typography variant="subtitle" paragraph>
                 Somos una vanguardista agencia de modelaje que no solo
                 representa talentos, sino que también los cultiva y proyecta en
                 el espectro global de la moda y el entretenimiento. Creemos en
@@ -129,10 +134,10 @@ function Home() {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper elevation={3} sx={{ p: 4 }}>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
                 ¿Quiénes Somos?
               </Typography>
-              <Typography>
+              <Typography variant="subtitle" paragraph>
                 Turina SA es una agencia de modelaje que redefine los estándares
                 de la industria, ofreciendo una plataforma sin precedentes para
                 aspirantes y modelos profesionales. Nos enfocamos en la
@@ -177,7 +182,7 @@ function Home() {
                   style={{ width: "auto", height: "80px", maxWidth: "100%" }}
                   loading="lazy"
                 />
-                <Typography variant="h6" gutterBottom align="center">
+                <Typography variant="h6" gutterBottom align="center" paragraph>
                   {service.title}
                 </Typography>
               </div>
@@ -202,12 +207,15 @@ function Home() {
                 <Typography
                   variant="h6"
                   gutterBottom
+                  paragraph
                   align="center"
                   sx={{ fontWeight: "bold" }}
                 >
                   {equipo.name}
                 </Typography>
-                <Typography>{equipo.testimonial}</Typography>
+                <Typography variant="subtitle" paragraph>
+                  {equipo.testimonial}
+                </Typography>
               </Box>
             </Grid>
           ))}
@@ -215,16 +223,22 @@ function Home() {
       </Box>
 
       {/* Call to Action */}
-      <Box sx={{ pt: 8, pb: 8, backgroundColor: "#4A3673" }}>
+      <Box sx={{ pt: 8, pb: 8, backgroundColor: "#4A3673", height: "200px" }}>
         <Typography
           variant="h4"
           gutterBottom
           align="center"
+          paragraph
           sx={{ color: "white", fontWeight: "bold" }}
         >
           ¿Tienes Preguntas o Quieres Saber Más Sobre Nuestros Servicios?
         </Typography>
-        <Typography variant="body1" paragraph align="center">
+        <Typography
+          variant="subtitle"
+          paragraph
+          align="center"
+          sx={{ color: "white" }}
+        >
           Estamos aquí para ayudarte. Llena el formulario de contacto a
           continuación o utiliza nuestros datos de contacto.
         </Typography>
