@@ -1,4 +1,6 @@
+import React from "react";
 import { Typography, Button, Box, Grid, Paper } from "@mui/material";
+import { useSpring, animated } from "@react-spring/web";
 import background from "../../assets/Recursos/Banner Home.png";
 import studio from "../../assets/Recursos/professional-photographer-beautiful-model-fashion-shoot-photo-studio-with-lighting.jpg";
 import pasarela from "../../assets/Recursos/fashion-show-catwalk-event-runway-show-fashion-week-themed-photograph.jpg";
@@ -37,18 +39,28 @@ const testimonioData = [
   },
 ];
 
-function Home() {
+const Hero = () => {
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: "translate3d(0, -20px, 0)" },
+    to: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    delay: 200,
+  });
+
+  const slideIn = useSpring({
+    from: { opacity: 0, transform: "translate3d(-100%, 0, 0)" },
+    to: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    delay: 400,
+  });
+
   return (
-    <>
-      <Navbar />
-      {/* Hero Section */}
+    <animated.div style={fadeIn}>
       <Box
         sx={{
-          textAlign: "left",
-          pt: 8,
-          pb: 8,
+          pt: { xs: 4, md: 8 },
+          pb: { xs: 4, md: 8 },
           width: "100%",
-          height: "100vh", // Adjust the height as needed
+          height: { xs: "auto", md: "100vh" },
+          minHeight: "100vh",
           backgroundColor: "var(--bg-color)",
           color: "white",
           backgroundImage: `url(${background})`,
@@ -56,37 +68,51 @@ function Home() {
           backgroundPosition: "center",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center", // Center vertically
-          alignItems: "flex-start", // Align to the left
+          justifyContent: "center",
+          alignItems: { xs: "center", md: "flex-start" },
+          textAlign: { xs: "center", md: "left" },
         }}
       >
-        <Box
-          sx={{
-            maxWidth: "600px",
-            ml: { xs: "1em", md: "3em" },
-            textAlign: "left",
-          }}
-        >
-          <Typography
-            variant="h3"
-            sx={{ fontWeight: "bold" }}
-            paragraph
-            gutterBottom
+        <animated.div style={slideIn}>
+          <Box
+            sx={{
+              maxWidth: { xs: "90%", sm: "80%", md: "600px" },
+              ml: { xs: 0, md: "3em" },
+              px: { xs: 2, md: 0 },
+            }}
           >
-            IMPULSA TU CARRERA EN EL MODELAJE CON TURINA
-          </Typography>
-          <Typography variant="subtitle" paragraph>
-            Combinamos tecnología innovadora y formación integral para llevar tu
-            talento al siguiente nivel. Descubre oportunidades exclusivas y haz
-            realidad tus sueños en la moda.
-          </Typography>
-          <Button variant="contained" color="secondary" size="large">
-            ¡ÚNETE AHORA!
-          </Button>
-        </Box>
+            <Typography
+              variant="h3"
+              sx={{ fontWeight: "bold", fontSize: { xs: "2rem", md: "3rem" } }}
+              paragraph
+              gutterBottom
+            >
+              IMPULSA TU CARRERA EN EL MODELAJE CON TURINA
+            </Typography>
+            <Typography variant="subtitle1" paragraph>
+              Combinamos tecnología innovadora y formación integral para llevar
+              tu talento al siguiente nivel. Descubre oportunidades exclusivas y
+              haz realidad tus sueños en la moda.
+            </Typography>
+            <Button variant="contained" color="secondary" size="large">
+              ¡ÚNETE AHORA!
+            </Button>
+          </Box>
+        </animated.div>
       </Box>
+    </animated.div>
+  );
+};
 
-      {/* First Section */}
+const FirstSection = () => {
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: "translate3d(0, 20px, 0)" },
+    to: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    delay: 200,
+  });
+
+  return (
+    <animated.div style={fadeIn}>
       <Box sx={{ pt: 8, pb: 8 }}>
         <Typography
           variant="h4"
@@ -149,7 +175,19 @@ function Home() {
           </Grid>
         </Grid>
       </Box>
+    </animated.div>
+  );
+};
 
+const ServicesSection = () => {
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: "translate3d(0, 20px, 0)" },
+    to: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    delay: 200,
+  });
+
+  return (
+    <animated.div style={fadeIn}>
       <Box sx={{ pt: 8, pb: 8 }}>
         <Typography
           variant="h4"
@@ -193,7 +231,19 @@ function Home() {
           </Button>
         </Grid>
       </Box>
+    </animated.div>
+  );
+};
 
+const TestimonialsSection = () => {
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: "translate3d(0, 20px, 0)" },
+    to: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    delay: 200,
+  });
+
+  return (
+    <animated.div style={fadeIn}>
       <Box sx={{ pt: 8, pb: 8 }}>
         <Grid container spacing={4} justifyContent="center">
           {testimonioData.map((equipo, index) => (
@@ -221,31 +271,74 @@ function Home() {
           ))}
         </Grid>
       </Box>
+    </animated.div>
+  );
+};
 
-      {/* Call to Action */}
-      <Box sx={{ pt: 8, pb: 8, backgroundColor: "#4A3673", height: "200px" }}>
+const CallToAction = () => {
+  const fadeIn = useSpring({
+    from: { opacity: 0, transform: "translate3d(0, 20px, 0)" },
+    to: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    delay: 200,
+  });
+
+  return (
+    <animated.div style={fadeIn}>
+      <Box
+        sx={{
+          pt: { xs: 4, sm: 6, md: 8 },
+          pb: { xs: 4, sm: 6, md: 8 },
+          backgroundColor: "#4A3673",
+          height: { xs: "auto", md: "200px" },
+          textAlign: "center",
+          px: { xs: 2, sm: 4, md: 8 },
+        }}
+      >
         <Typography
           variant="h4"
           gutterBottom
-          align="center"
           paragraph
-          sx={{ color: "white", fontWeight: "bold" }}
+          sx={{
+            color: "white",
+            fontWeight: "bold",
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2rem" },
+          }}
         >
           ¿Tienes Preguntas o Quieres Saber Más Sobre Nuestros Servicios?
         </Typography>
         <Typography
-          variant="subtitle"
+          variant="subtitle1"
           paragraph
-          align="center"
-          sx={{ color: "white" }}
+          sx={{
+            color: "white",
+            fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+          }}
         >
           Estamos aquí para ayudarte. Llena el formulario de contacto a
           continuación o utiliza nuestros datos de contacto.
         </Typography>
-        <Button variant="contained" color="secondary" size="large">
+        <Button
+          variant="contained"
+          color="secondary"
+          size="large"
+          sx={{ mt: 2 }}
+        >
           ¡CONTÁCTANOS!
         </Button>
       </Box>
+    </animated.div>
+  );
+};
+
+function Home() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <FirstSection />
+      <ServicesSection />
+      <TestimonialsSection />
+      <CallToAction />
       <Footer />
     </>
   );
