@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../Screens/Home/Home";
-import AboutMe from "../Screens/AboutMe/AboutMe";
 import Contact from "../Screens/Contact/Contact";
+import Services from "../Screens/ServicesPage/Services";
+import Dashboards from "../Screens/Dashboards/Dashboards";
 
 export default function Rutas() {
     return (
@@ -9,8 +10,9 @@ export default function Rutas() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/AboutMe" element={<AboutMe />} />
+                <Route path="/Services" element={<Services />} />
                 <Route path="/Contact" element={<Contact />} />
+                <Route path="/Dashboards" element={<Dashboards />} />
             </Routes>
         </BrowserRouter>
     );
