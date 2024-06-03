@@ -1,4 +1,3 @@
-import React from "react";
 import { Typography, Button, Box, Grid, Paper } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import background from "../../assets/Recursos/Banner Home.png";
