@@ -66,7 +66,7 @@ function Dashboards() {
           variant="h6"
           paragraph
           align="center"
-          sx={{ color: "var(--subtitle-color)" }}
+          sx={{ color: "var(--subtitle-color)", fontWeight: "bold" }}
         >
           Una coleccion de las mejores herramnientas para administrar tus datos
           de manera profesional desarrollada por Zovthro.
@@ -118,7 +118,7 @@ function DashboardCard({ dashboard }) {
       >
         <Card
           sx={{
-            height: "100%",
+            height: "480px",
             display: "flex",
             flexDirection: "column",
             bgcolor: "var(--button-bg-color)",
