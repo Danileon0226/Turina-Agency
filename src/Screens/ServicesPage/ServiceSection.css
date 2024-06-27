@@ -1,0 +1,97 @@
+/* src/index.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f9; /* Fondo suave */
+}
+
+
+.services {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 20px;
+}
+
+.services h2 {
+  font-size: 2em;
+  color: #001f54;
+}
+
+.services p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.service-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.service-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.service-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 50%;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor de las imágenes */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave */
+}
+
+.service-image:hover {
+  transform: scale(1.05); /* Aumenta el tamaño en un 5% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+.service-text {
+  flex: 2;
+  text-align: left;
+  margin: 0 40px; /* Aumentar el margen */
+}
+
+.service-text h3 {
+  color: #001f54;
+  margin-bottom: 10px;
+  font-size: 1.5em; /* Tamaño igual para todos los títulos */
+}
+
+.service-text p {
+  color: #333;
+  margin: 10px 0;
+  text-align: justify; /* Justificar las descripciones */
+}
+
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .service-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-section.reverse {
+    flex-direction: column;
+  }
+
+  .service-text {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .service-image {
+    max-width: 250px; /* Ajustar tamaño máximo de las imágenes en pantallas pequeñas */
+  }
+}
