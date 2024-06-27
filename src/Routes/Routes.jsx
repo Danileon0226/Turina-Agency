@@ -7,17 +7,16 @@ import Login from "../Screens/Login/Login";
 import SignIn from "../Screens/SigIn/SigIn";
 
 export default function Rutas() {
-    return (
-
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/Services" element={<Services />} />
-                <Route path="/Contact" element={<Contact />} />
-                <Route path="/Dashboards" element={<Dashboards />} />
-                <Route path="/Login" element={<Login />} />
-                <Route path="/SigIn" element={<SignIn />} />
-            </Routes>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/dashboards" element={<Dashboards />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sigin" element={<SignIn />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }

@@ -17,13 +17,13 @@ function Navbar() {
             </NavLink>
           </div>
           <div className="menu">
-            <NavLink to="/Services" className="frame">
+            <NavLink to="/services" className="frame">
               <i className="ri-user-smile-line"></i>
               <p className="li-mobile-p">Servicios</p>
             </NavLink>
           </div>
           <div className="menu">
-            <NavLink to="/Contact" className="frame">
+            <NavLink to="/contact" className="frame">
               <i className="ri-stack-line"></i>
               <p className="li-mobile-p">Contacto</p>
             </NavLink>
